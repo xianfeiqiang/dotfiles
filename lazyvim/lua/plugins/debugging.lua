@@ -11,13 +11,6 @@ return {
       desc = "Debug Test Method",
     },
     {
-      "<leader>dd",
-      function()
-        require("dap-python").debug_file()
-      end,
-      desc = "Debug Python File",
-    },
-    {
       mode = "n",
       "<leader>dc",
       function()
@@ -76,7 +69,12 @@ return {
     },
   },
   config = function()
-    require("dap-python").setup("VIRTUAL_ENV")
+    local dap_python = require("dap-python")
+    local adapter_python_path = require("mason-registry").get_package("debugpy"):get_install_path()
+      .. "/venv/bin/python"
+
+    dap_python.setup(adapter_python_path)
+    -- require("dap-python").setup(vim.g.python3_host_prog)
     require("dap-python").test_runner = "pytest"
   end,
 }
