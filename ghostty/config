@@ -1,0 +1,12 @@
+theme = GruvboxDark
+cursor-style = underline
+shell-integration-features = no-cursor
+title = "Ghostty Terminal"
+
+quick-terminal-position = center
+
+background-blur-radius = 90
+background-opacity = 0.85
+font-size = 15
+font-family = "Hack Nerd Font"
+
