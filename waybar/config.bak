@@ -1,0 +1,97 @@
+{
+    "layer": "top",
+    "modules-left": ["custom/launcher","cpu","memory","tray","hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/workspaces", "pulseaudio", "network", "battery", "custom/power"],
+    "pulseaudio": {
+        "tooltip": false,
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": "{icon} {volume}%",
+        "on-click": "pavucontrol",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+    "hyprland/window": {
+        "format": "<b>{}</b>",
+        "max-length": 40
+    },
+    "custom/power": {
+        "format": "  ",
+        "on-click": "wlogout -b 6",
+        "interval": 86400, // once every day
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "disable-scroll": false,
+        "disable-click": false,
+        "pin-workspaces": true,
+        "format-icons": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "active": ""
+        }
+    },
+    "network": {
+      "tooltip": true,
+      "format-wifi": " ({signalStrength}%)",
+      "format-ethernet": "  wired",
+      "format-disconnected": "Disconnected", // 无网络连接时显示
+      "format-icons": {
+        "connected": "",          // 图标：已连接
+        "disconnected": ""        // 图标：未连接
+      },
+      "tooltip-format": " {bandwidthUpBytes}  {bandwidthDownBytes}"
+    },
+    "battery": {
+            "states": {
+                    "good": 95,
+                    "warning": 40,
+                    "critical": 20
+            },
+            "format": "{icon}  {capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": " {capacity}%",
+            "format-alt": "{time} {icon}",
+            "format-icons": ["", "", "", "", ""]
+    },
+    "tray":{
+        "icon-size":18,
+        "spacing": 10
+    },
+    "clock": {
+            "timezone": "Asia/Shanghai",
+            "format": "{:%H:%M}",
+            "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar-weeks-pos": "right",
+            "today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
+            "format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
+            "format-calendar-weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+            "format-calendar-weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+            "on-scroll": {
+              "calendar": 1
+            }
+        },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10,
+        "on-click": "kitty htop"
+    },
+    "memory": {
+            "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/launcher":{
+            "format": "",
+            "on-click": "rofi -show drun",
+            "on-click-right": "rofi -show run"
+    },
+}
