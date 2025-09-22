@@ -4,3 +4,4 @@
 
 local opt = vim.opt
 opt.relativenumber = false
+opt.guifont = "Fira Code:h14"
