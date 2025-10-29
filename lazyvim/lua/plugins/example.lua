@@ -123,17 +123,17 @@ return {
         "bash",
         "html",
         "javascript",
-        -- "json",
+        "json",
         "lua",
-        -- "markdown",
-        -- "markdown_inline",
+        "markdown",
+        "markdown_inline",
         "python",
         "query",
         "regex",
         "tsx",
         "typescript",
         "vim",
-        -- "yaml",
+        "yaml",
       },
     },
   },
@@ -157,7 +157,11 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
+      table.insert(opts.sections.lualine_x, {
+        function()
+          return "😄"
+        end,
+      })
     end,
   },
 
@@ -186,7 +190,7 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
-        -- "flake8",
+        "flake8",
       },
     },
   },
