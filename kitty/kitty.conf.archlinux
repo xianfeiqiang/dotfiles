@@ -1,0 +1,150 @@
+############################################
+# Kitty Terminal Configuration
+# Theme: Tokyo Night Night (Optimized)
+# Optimized for Zellij + LazyVim
+############################################
+
+############
+# 字体设置
+############
+font_family      JetBrainsMono Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+
+font_size 12.0
+
+# 字体细节优化
+disable_ligatures never
+adjust_line_height 120%
+adjust_column_width 0
+
+############
+# 窗口外观 (暗色毛玻璃优化)
+############
+# 背景色设为深邃黑，透明度 0.95
+background_opacity 0.95
+# 开启模糊（需要合成器支持，如 Hyprland, KDE, Sway）
+background_blur 32
+
+# 窗口边距 - 增加到 8 让 UI 更有呼吸感
+window_padding_width 8
+
+# 窗口装饰
+hide_window_decorations no
+
+# 启动位置
+remember_window_size  yes
+initial_window_width  120c
+initial_window_height 34c
+
+############
+# 滚动
+############
+scrollback_lines 10000
+scrollback_pager less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER
+wheel_scroll_multiplier 5.0
+
+############
+# 性能
+############
+enable_audio_bell no
+visual_bell_duration 0
+repaint_delay 10
+input_delay 3
+sync_to_monitor yes
+
+############
+# 鼠标 & 剪贴板
+############
+copy_on_select yes
+strip_trailing_spaces smart
+clipboard_control write-clipboard write-primary read-clipboard
+
+############
+# URL 打开
+############
+open_url_with default
+url_style double
+url_color #73daca
+
+############
+# 光标
+############
+cursor_shape block
+cursor_blink_interval 0.5
+cursor_stop_blinking_after 15
+
+############
+# 颜色主题: Tokyo Night Night
+############
+foreground                      #c0caf5
+background                      #1a1b26
+selection_foreground            #1a1b26
+selection_background            #33467c
+
+# 光标
+cursor                          #c0caf5
+cursor_text_color               #1a1b26
+
+# 16色调色板
+# black
+color0 #15161e
+color8 #414868
+# red
+color1 #f7768e
+color9 #f7768e
+# green
+color2 #9ece6a
+color10 #9ece6a
+# yellow
+color3 #e0af68
+color11 #e0af68
+# blue
+color4 #7aa2f7
+color12 #7aa2f7
+# magenta
+color5 #bb9af7
+color13 #bb9af7
+# cyan
+color6 #7dcfff
+color14 #7dcfff
+# white
+color7 #a9b1d6
+color15 #c0caf5
+
+############
+# Tab 外观 (极简风格)
+############
+tab_bar_style               fade
+tab_fade                    1
+active_tab_font_style       bold
+inactive_tab_font_style     normal
+
+active_tab_foreground       #15161e
+active_tab_background       #7aa2f7
+inactive_tab_foreground     #545c7e
+inactive_tab_background     #1a1b26
+
+############
+# 快捷键
+############
+# 新窗口/Tab
+map ctrl+shift+enter new_window
+map ctrl+shift+t new_tab
+map ctrl+shift+w close_tab
+
+# 一键启动 zellij (默认在当前目录)
+map ctrl+shift+z launch --cwd=current zellij
+
+# 字体缩放
+map ctrl+equal change_font_size all +1.0
+map ctrl+minus change_font_size all -1.0
+map ctrl+0     change_font_size all 0
+
+
+############
+# 平台优化
+############
+linux_display_server auto
+term xterm-kitty

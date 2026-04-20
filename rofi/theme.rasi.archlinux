@@ -1,0 +1,30 @@
+* {
+    bg: #2e3440;
+    fg: #d8dee9;
+    selected: #88c0d0;
+    border-radius: 6;
+}
+
+window {
+    padding: 10px;
+    border: 2px;
+    border-color: #4c566a;
+    width: 500px;
+}
+
+element {
+    padding: 6px;
+    border-radius: 4px;
+}
+
+element normal.normal { background-color: transparent; }
+element selected.normal { background-color: @selected; text-color: #2e3440; }
+
+inputbar {
+    background-color: #3b4252;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+element-icon { size: 18px; }
+element-text { vertical-align: 0.5; }
