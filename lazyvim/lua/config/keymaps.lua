@@ -43,8 +43,11 @@ map("n", "n", "nzzzv", { desc = "Next search result" })
 map("n", "N", "Nzzzv", { desc = "Previous search result" })
 
 -- 终端
-map("n", "<leader>tt", "<cmd>terminal<cr>", { desc = "Open terminal" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+-- 使用 Snacks 组件切换浮动终端（按一次打开，再按一次隐藏）
+map("n", "<leader>tt", function()
+  Snacks.terminal.toggle()
+end, { desc = "Toggle Floating Terminal" })
 
 -- 代码相关
 map("n", "<leader>cf", function()
